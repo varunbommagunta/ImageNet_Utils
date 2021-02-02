@@ -18,7 +18,7 @@ if __name__ == '__main__':
     p.add_argument('--verbose', '-v', action='store_true', help='Enable verbose log')
     args = p.parse_args()
     if args.wnid is None:
-        print 'No wnid'
+        print ('No wnid')
         sys.exit()
 
     downloader = imagedownloader.ImageNetDownloader()
@@ -48,7 +48,7 @@ if __name__ == '__main__':
                 pref_utils.saveUserInfo(username, accessKey)
 
         if username is None or accessKey is None:
-            print 'need username and accessKey to download original images'
+            print ('need username and accessKey to download original images')
         else:
             for id in args.wnid:
                 downloader.downloadOriginalImages(id, username, accessKey)
